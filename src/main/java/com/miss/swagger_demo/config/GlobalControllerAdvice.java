@@ -103,7 +103,6 @@ public class GlobalControllerAdvice extends AbstractMappingJacksonResponseBodyAd
                                            MediaType contentType, MethodParameter returnType,
                                            ServerHttpRequest request, ServerHttpResponse response) {
         if (returnType.getMethod().isAnnotationPresent(RestWrapper.class)) {
-            // updated by zjq add returnType to the method getWrapperResponse
             bodyContainer.setValue(getWrapperResponse(returnType, request,
                     bodyContainer.getValue()));
         }
